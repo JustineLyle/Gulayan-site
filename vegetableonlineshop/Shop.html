@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegeko</title>
+    <style>
+    body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+    header 
+        {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;/
+        }
+
+        main 
+        {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #555;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .recipe-tabs 
+        {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .recipe-tab 
+        {
+            display: none;
+        }
+
+        img 
+        {
+            max-width: 50%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h2 
+        {
+            color: #333;
+        }
+
+        ul 
+        {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li 
+        {
+            margin-bottom: 10px;
+        }
+
+        a 
+        {
+            color: #e44d26;
+            text-decoration: none;
+        }
+
+        a:hover 
+        {
+            text-decoration: underline;
+        }
+
+        .ingredients 
+        {
+            margin-bottom: 20px;
+        }
+
+        .instructions 
+        {
+            line-height: 1.6;
+        }
+
+        .tab-button 
+        {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e44d26;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .active-tab 
+        {
+            display: block;
+        }
+    </style>
+    <style>
+        body 
+        {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+
+        header 
+        {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        img 
+        {
+            width: 300px;
+            height: auto;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        img:hover 
+        {
+            transform: scale(1.1);
+        }
+
+        footer 
+        {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            width: 50%;
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.5s ease;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev {
+          left: 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="Image/CapreseSalad.jpeg" alt="Image 1">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="Image/ShrimpScampiPasta.jpeg" alt="Image 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="Image/BeefTacos.jpeg" alt="Image 3">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="Image/ChickenCaesarSalad.jpeg" alt="Image 4">
+        </div>
+        <div class="mySlides fade">
+            <img src="Image/ChocolateChipCookies.jpeg" alt="Image 5">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="Image/MargheritaPizza.jpeg" alt="Image 6">
+        </div>
+        <div class="mySlides fade">
+            <img src="Image/SpaghettiBolognese.jpeg" alt="Image 7">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="Image/VegetableStir-Fry.jpeg" alt="Image 8">
+        </div>
+        <div class="mySlides fade">
+            <img src="Image/ChickenTeriyakiBowl.jpeg" alt="Image 9">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="Image/SpinachandFetaStuffedChickenBreast.jpeg" alt="Image 10">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            setTimeout(showSlides, 2000); // Change slide every 3 seconds
+        }
+
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            showSlides();
+        });
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Vegeko</h1>
+    </header>
+
+    <main>
+        <div class="recipe-tabs">
+            <a href="#" class="tab-button" onclick="openTab('recipe1')"> 1</a>
+            <a href="#" class="tab-button" onclick="openTab('recipe2')"> 2</a>
+            <a href="#" class="tab-button" onclick="openTab('recipe3')"> 3</a>
+            <a href="#" class="tab-button" onclick="openTab('recipe4')"> 4</a>
+            <a href="#" class="tab-button" onclick="openTab('recipe5')"> 5</a>
+            <a href="#" class="tab-button" onclick="openTab('recipe6')"> 6</a>
+            <a href="#" class="tab-button" onclick="openTab('recipe7')"> 7</a>
+            
+        </div>
+
+       
+        <div id="recipe1" class="recipe-tab active-tab">
+            <h2>Tomato</h2>
+            <img src="./vegetables-img/Tomato_je.jpg" alt="Food Type 1">
+            <p>Tomatoes galing Purag</p>
+        </div>
+
+        
+        <div id="recipe2" class="recipe-tab">
+            <h2>Talong</h2>
+            
+            <img src="./vegetables-img/eggplant.JPG" alt="Food Type 2">
+           <p>Talong Galing kibit kibit</p>
+        </div>
+
+       <div id="recipe3" class="recipe-tab">
+            <h2>Bawang</h2>
+            <img src="./vegetables-img/garlic.JPG" alt="Food Type 3">
+            <p>Bawang galing kibit kibit</p>
+        </div>
+
+       <div id="recipe4" class="recipe-tab">
+            <h2>Beef Tacos</h2>
+            
+            <img src="./vegetables-img/ginger.jpg" alt="Food Type 4">
+            <p>Laya galing ubbog</p>
+        </div>
+        
+        <div id="recipe5" class="recipe-tab">
+            <h2>Karabasa</h2>
+            <img src="./vegetables-img/kalabasa.jpg" alt="Food Type 5">
+            <p>Karabasa galng kibit kibit</p>
+        </div>
+        
+        <div id="recipe6" class="recipe-tab">
+            <h2>Lasuna</h2>
+            <img src="./vegetables-img/onion.jpg" alt="Food Type 6">
+            <p>Lasuna galing purag</p>
+        </div>
+        
+        <div id="recipe7" class="recipe-tab">
+            <h2>Pipino</h2>
+            <img src="./vegetables-img/cucumber.jpg" alt="Food Type 7">
+            <p>Pipino galing cadanglaan</p>
+        </div>
+        
+    </main>
+
+    <script>
+        function openTab(tabName) 
+        {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("recipe-tab");
+            for (i = 0; i < tabcontent.length; i++) 
+            {
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
+     
+</body>
+</html>
